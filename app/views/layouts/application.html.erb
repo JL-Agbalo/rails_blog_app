@@ -14,13 +14,15 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-
-    <%= render 'layouts/messages' %>
-    
-    <%= yield %>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <%= render 'layouts/messages' %>
+      
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -49,6 +49,9 @@ group :production do
   gem "pg"
 end
 
+# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
+gem "tailwindcss-rails"
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"

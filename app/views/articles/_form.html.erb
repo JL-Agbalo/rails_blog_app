@@ -1,8 +1,8 @@
-<%= form_with model: @article, local: true do |f| %>
+<%= form_with model: @article, local: true, class: "max-w-md mx-auto bg-white p-6 rounded-lg shadow-md" do |f| %>
   <% if @article.errors.any? %>
-    <div id="error_explanation" style="color: red; background: #ffcccc; border: 1px solid red; padding: 10px; margin-bottom: 20px;">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-      <ul>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+      <h2 class="font-bold text-lg mb-2"><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <ul class="list-disc list-inside">
         <% @article.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -10,17 +10,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="mb-4">
+    <%= f.label :title, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" %>
   </div>
 
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="mb-6">
+    <%= f.label :description, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.text_area :description, rows: 4, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 resize-none" %>
   </div>
 
-  <div>
-    <%= f.submit %>
+  <div class="flex items-center justify-between">
+    <%= f.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-200" %>
   </div>
 <% end %>
