@@ -51,3 +51,5 @@ end
        @article = Article.find(params[:id])
   end
 end
+
+# TEST
