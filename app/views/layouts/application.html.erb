@@ -19,19 +19,7 @@
 
   <body>
 
-        <% if notice %>
-      <div class="flash notice"><%= notice %></div>
-    <% end %>
-    
-    <% if alert %>
-      <div class="flash alert"><%= alert %></div>
-    <% end %>
-    
-    <% flash.each do |type, message| %>
-      <% unless type == "notice" || type == "alert" %>
-        <div class="flash <%= type %>"><%= message %></div>
-      <% end %>
-    <% end %>
+    <%= render 'layouts/messages' %>
     
     <%= yield %>
   </body>
